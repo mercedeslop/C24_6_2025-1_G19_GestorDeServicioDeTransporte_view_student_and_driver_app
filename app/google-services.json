@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "456534102220",
+    "project_id": "view-student-app",
+    "storage_bucket": "view-student-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456534102220:android:a932dc48c8f58259d6b269",
+        "android_client_info": {
+          "package_name": "com.jennyfer.sapallanay.view_student_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxNW0Vw8kdd5YjOgCrYNat9WiBTvgoO6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
