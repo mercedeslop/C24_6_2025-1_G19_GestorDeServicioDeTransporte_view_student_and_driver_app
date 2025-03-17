@@ -54,4 +54,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(libs.firebase.auth)
+    implementation(libs.play.services.auth)
 }

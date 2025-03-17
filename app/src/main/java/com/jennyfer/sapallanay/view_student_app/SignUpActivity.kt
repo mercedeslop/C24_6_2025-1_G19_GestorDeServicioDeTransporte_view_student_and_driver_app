@@ -4,14 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
-import com.jennyfer.sapallanay.view_student_app.databinding.ActivitySignInBinding
 import com.jennyfer.sapallanay.view_student_app.databinding.ActivitySignUpBinding
 
 class SignUpActivity : BaseActivity() {
