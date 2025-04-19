@@ -3,6 +3,7 @@ package com.jennyfer.sapallanay.view_student_app
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -17,14 +18,39 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding?.root)
         auth = Firebase.auth
 
-        binding?.btnSignOut?.setOnClickListener{
+        //Mostrar fragmentos
+        replaceFragment(InicioFragment())
+
+        binding?.bottomNavigation?.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.bottom_home -> {
+                    replaceFragment(InicioFragment())
+                    true
+                }
+                R.id.bottom_rutas -> {
+                    replaceFragment(RutasFragment())
+                    true
+                }
+                else -> false
+            }
+        }
+
+
+        // Cerrar sesion
+     /*   binding?.btnSignOut?.setOnClickListener{
             if (auth.currentUser!=null) {
                 auth.signOut()
                 startActivity(Intent(this,SignInActivity::class.java))
                 finish()
             }
 
-        }
+        }*/
 
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.frame_container, fragment)
+            .commit()
     }
 }

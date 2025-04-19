@@ -55,4 +55,5 @@ dependencies {
 
     implementation(libs.firebase.auth)
     implementation(libs.play.services.auth)
+    implementation("androidx.recyclerview:recyclerview:1.4.0")
 }

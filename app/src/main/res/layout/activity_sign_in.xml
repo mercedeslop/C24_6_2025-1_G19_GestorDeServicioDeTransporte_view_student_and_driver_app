@@ -140,7 +140,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="--------------------- O inicia sesión con ---------------------"
+        android:text="------------------- O inicia sesión con -------------------"
         android:textSize="18sp"
         android:textColor="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
@@ -207,7 +207,7 @@
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:src="@drawable/autobus"
+                android:src="@drawable/iconbus"
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="6dp"
                 android:layout_marginStart="9dp"
