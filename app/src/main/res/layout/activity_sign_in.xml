@@ -9,9 +9,10 @@
 
     <ImageView
         android:id="@+id/ivSinInLogo"
-        android:layout_width="350dp"
-        android:layout_height="150dp"
-        android:src="@drawable/logo1"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/icon_logo_principal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

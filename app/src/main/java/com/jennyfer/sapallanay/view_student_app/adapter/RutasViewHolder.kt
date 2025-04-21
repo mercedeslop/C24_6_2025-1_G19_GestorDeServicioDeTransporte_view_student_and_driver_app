@@ -14,8 +14,5 @@ class RutasViewHolder (view: View): RecyclerView.ViewHolder(view){
         binding.txtDisponibles.text = rutaModel.numeroDisponibilidad
         binding.txtRuta.text = rutaModel.tituloRuta
         binding.txtTurno.text = rutaModel.publisher
-
-
     }
-
 }
