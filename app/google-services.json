@@ -12,7 +12,20 @@
           "package_name": "com.jennyfer.sapallanay.view_student_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "456534102220-ojg3pb1u03rr1d8hdtin4050kcr8b3m0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jennyfer.sapallanay.view_student_app",
+            "certificate_hash": "ba5ce6c075a6deb2fefea6ba7ff3fe6e516570dd"
+          }
+        },
+        {
+          "client_id": "456534102220-3i2rojpbdqf7vkcnidj1r3e5fsrbvm4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDxNW0Vw8kdd5YjOgCrYNat9WiBTvgoO6Y"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456534102220-3i2rojpbdqf7vkcnidj1r3e5fsrbvm4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

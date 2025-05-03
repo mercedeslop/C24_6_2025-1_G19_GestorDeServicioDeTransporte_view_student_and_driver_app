@@ -4,16 +4,18 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
+import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import com.jennyfer.sapallanay.view_student_app.databinding.ActivitySignInBinding
+import kotlinx.coroutines.launch
 
 class SignInActivity : BaseActivity() {
     private var binding:ActivitySignInBinding? = null
     private lateinit var auth: FirebaseAuth
-
-   // private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var googleAuthClient: GoogleAuthClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,13 +23,11 @@ class SignInActivity : BaseActivity() {
         setContentView(binding?.root)
 
         auth = Firebase.auth
+        googleAuthClient = GoogleAuthClient(this)
 
-       /* val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail().build()
-        googleSignInClient = GoogleSignIn.getClient(this,gso)*/
-
-
+        if (auth.currentUser != null) {
+            navigateToMain()
+        }
         binding?.tvRegister?.setOnClickListener{
             startActivity(Intent(this,SignUpActivity::class.java))
             finish()
@@ -37,14 +37,18 @@ class SignInActivity : BaseActivity() {
             signInUser()
         }
 
+        binding?.btnSignInWithGoogle?.setOnClickListener {
+            signInWithGoogle()
+        }
+
         if (auth.currentUser!= null){
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
 
-
-
     }
+
+
     private fun signInUser() {
         val email = binding?.etSinInEmail?.text.toString()
         val password = binding?.etSinInPassword?.text.toString()
@@ -55,13 +59,14 @@ class SignInActivity : BaseActivity() {
                 .addOnCompleteListener(this){task->
                     if (task.isSuccessful)
                     {
+                        Toast.makeText(this, "¡Bienvenido de nuevo!", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this,MainActivity::class.java))
                         finish()
                         hideProgressBar()
                     }
                     else
                     {
-                        showToast(this, "No se puede iniciar sesion. Intente en otro momento ")
+                        showToast(this, "Correo institucional o contraseña incorrectos")
                         hideProgressBar()
                     }
 
@@ -69,58 +74,18 @@ class SignInActivity : BaseActivity() {
         }
     }
 
- /*   private fun sinInWithGoogle()
-    {
-        val signInIntent = googleSignInClient.signInIntent
-        launcher.launch(signInIntent)
-    }
+    private fun signInWithGoogle() {
+        lifecycleScope.launch {
+            val success = googleAuthClient.signIn()
+            if (success) {
+                Toast.makeText(this@SignInActivity, "¡Sesión iniciada con Google!", Toast.LENGTH_SHORT).show()
+                navigateToMain()
+            } else {
+                Toast.makeText(this@SignInActivity, "Inicio cancelado o fallido. Intenta nuevamente.", Toast.LENGTH_SHORT).show()
+            }
 
-    private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult())
-    {result->
-        if (result.resultCode == Activity.RESULT_OK)
-        {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-            handleResults(task)
         }
     }
-
-    private fun handleResults(task: Task<GoogleSignInAccount>) {
-        if (task.isSuccessful)
-        {
-            val account: GoogleSignInAccount? = task.result
-            if (account!=null) {
-                updateUI(account)
-            }
-        }
-        else
-        {
-            Toast.makeText(this,"Sign In Failed, try again.",Toast.LENGTH_SHORT).show()
-        }
-    }*/
-
-  /*  private fun updateUI(account: GoogleSignInAccount) {
-        showProgressBar()
-        val credential = GoogleAuthProvider.getCredential(account.idToken,null)
-        auth.signInWithCredential(credential).addOnCompleteListener{
-            if (it.isSuccessful)
-            {
-                val id = FireStoreClass().getCurrentUserId()
-                val name = account.displayName.toString()
-                val email = account.email.toString()
-                val userInfo = User(id, name, email)
-                FireStoreClass().registerUser(userInfo)
-                startActivity(Intent(this,MainActivity::class.java))
-                finish()
-            }
-            else
-            {
-                Toast.makeText(this,"Sign In Failed, try again.",Toast.LENGTH_SHORT).show()
-            }
-            hideProgressBar()
-        }
-    }*/
-
-
 
     private fun validateForm(email: String, password: String): Boolean {
         return when {
@@ -134,6 +99,11 @@ class SignInActivity : BaseActivity() {
             }
             else -> { true }
         }
+    }
+
+    private fun navigateToMain() {
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
     }
 
 }

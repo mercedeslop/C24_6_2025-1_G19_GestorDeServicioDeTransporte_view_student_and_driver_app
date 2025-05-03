@@ -12,6 +12,8 @@ import com.jennyfer.sapallanay.view_student_app.databinding.ActivitySignUpBindin
 class SignUpActivity : BaseActivity() {
     private var binding:ActivitySignUpBinding? = null
     private lateinit var auth: FirebaseAuth
+    private val allowedDomains = listOf("@tecsup.edu.pe")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
@@ -39,13 +41,13 @@ class SignUpActivity : BaseActivity() {
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this){task ->
                     if (task.isSuccessful){
-                        showToast(this, "Se creo exitosamente su usuario")
+                        showToast(this, "Se creo exitosamente su usuario. ¡Bienvenido!")
                         hideProgressBar()
                         startActivity(Intent(this, MainActivity::class.java))
                         finish()
 
                     } else {
-                        showToast(this, "No se creo su usuario. Intentelo de nuevo")
+                        showToast(this, "No se puede registrar. Intentelo de nuevo")
                         hideProgressBar()
                     }
         }}
@@ -65,12 +67,23 @@ class SignUpActivity : BaseActivity() {
                 binding?.tilEmail?.error = "Ingrese un correo electronico valido"
                 false
             }
+            !isEmailInstitutional(email) -> {
+                binding?.tilEmail?.error = "Ingrese un correo institucional valido"
+                false
+            }
             TextUtils.isEmpty(password)->{
                 binding?.tilPassword?.error = "Ingrese contraseña"
                 false
             }
             else -> { true }
         }
+
+
+    }
+
+    private fun isEmailInstitutional(email: String): Boolean {
+        val domain = email.substringAfter("@")
+        return allowedDomains.contains("@$domain")
     }
 
 
