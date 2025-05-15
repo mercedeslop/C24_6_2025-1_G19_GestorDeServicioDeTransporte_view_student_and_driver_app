@@ -1,4 +1,4 @@
-package com.jennyfer.sapallanay.view_student_app
+package com.jennyfer.sapallanay.view_student_app.ui.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,10 +7,12 @@ import android.util.Patterns
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
+import com.jennyfer.sapallanay.view_student_app.BaseActivity
+import com.jennyfer.sapallanay.view_student_app.MainActivity
 import com.jennyfer.sapallanay.view_student_app.databinding.ActivitySignUpBinding
 
 class SignUpActivity : BaseActivity() {
-    private var binding:ActivitySignUpBinding? = null
+    private var binding: ActivitySignUpBinding? = null
     private lateinit var auth: FirebaseAuth
     private val allowedDomains = listOf("@tecsup.edu.pe")
 
@@ -22,7 +24,7 @@ class SignUpActivity : BaseActivity() {
         auth = Firebase.auth
 
         binding?.tvLoginPage?.setOnClickListener{
-            startActivity(Intent(this,SignInActivity::class.java))
+            startActivity(Intent(this, SignInActivity::class.java))
             finish()
 
         }

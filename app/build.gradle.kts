@@ -60,4 +60,11 @@ dependencies {
     implementation(libs.googleid)
     implementation(libs.androidx.credentials.play.services.auth)
 
+    // Retrofit y conversor Gson
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+    //implementation (libs.kotlinx.coroutines.android)
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.fragment.ktx)
+
 }

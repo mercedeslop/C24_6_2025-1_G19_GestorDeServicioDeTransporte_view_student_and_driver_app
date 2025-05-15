@@ -1,10 +1,10 @@
 package com.jennyfer.sapallanay.view_student_app
 
 class RutasProvider {
-    companion object{
+    /*companion object{
         val rutasList = listOf<Ruta>(
             Ruta(
-                 "10 lugares disponibles",
+                "10 lugares disponibles",
                 "CAMPUS - AV. J. PRADO - OVALO LA PERLA",
                 "Tarde"
             ),
@@ -22,7 +22,7 @@ class RutasProvider {
             ),
             Ruta(
                 "15 lugares disponibles",
-                "Ruta: CAMPUS - PUENTE NUEVO - MEGA PLAZA",
+                "CAMPUS - PUENTE NUEVO - MEGA PLAZA",
                 "Tarde"
 
             ),
@@ -33,5 +33,5 @@ class RutasProvider {
 
             )
         )
-    }
+    }*/
 }

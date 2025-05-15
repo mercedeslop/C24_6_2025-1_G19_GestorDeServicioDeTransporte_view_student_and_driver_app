@@ -1,4 +1,4 @@
-package com.jennyfer.sapallanay.view_student_app
+package com.jennyfer.sapallanay.view_student_app.ui.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,11 +9,14 @@ import androidx.lifecycle.lifecycleScope
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
+import com.jennyfer.sapallanay.view_student_app.BaseActivity
+import com.jennyfer.sapallanay.view_student_app.GoogleAuthClient
+import com.jennyfer.sapallanay.view_student_app.MainActivity
 import com.jennyfer.sapallanay.view_student_app.databinding.ActivitySignInBinding
 import kotlinx.coroutines.launch
 
 class SignInActivity : BaseActivity() {
-    private var binding:ActivitySignInBinding? = null
+    private var binding: ActivitySignInBinding? = null
     private lateinit var auth: FirebaseAuth
     private lateinit var googleAuthClient: GoogleAuthClient
 
@@ -29,7 +32,7 @@ class SignInActivity : BaseActivity() {
             navigateToMain()
         }
         binding?.tvRegister?.setOnClickListener{
-            startActivity(Intent(this,SignUpActivity::class.java))
+            startActivity(Intent(this, SignUpActivity::class.java))
             finish()
         }
 
@@ -60,7 +63,7 @@ class SignInActivity : BaseActivity() {
                     if (task.isSuccessful)
                     {
                         Toast.makeText(this, "¡Bienvenido de nuevo!", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this,MainActivity::class.java))
+                        startActivity(Intent(this, MainActivity::class.java))
                         finish()
                         hideProgressBar()
                     }

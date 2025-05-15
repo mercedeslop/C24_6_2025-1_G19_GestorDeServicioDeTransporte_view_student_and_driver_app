@@ -1,6 +1,5 @@
 package com.jennyfer.sapallanay.view_student_app
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -8,6 +7,8 @@ import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import com.jennyfer.sapallanay.view_student_app.databinding.ActivityMainBinding
+import com.jennyfer.sapallanay.view_student_app.ui.view.InicioFragment
+import com.jennyfer.sapallanay.view_student_app.ui.view.RutasFragment
 
 class MainActivity : AppCompatActivity() {
     private var binding:ActivityMainBinding? = null
@@ -34,7 +35,6 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
-
 
         // Cerrar sesion
      /*   binding?.btnSignOut?.setOnClickListener{
