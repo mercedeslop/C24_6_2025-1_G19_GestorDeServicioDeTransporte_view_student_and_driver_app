@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragmentDetalleRuta"
@@ -7,313 +7,314 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="230dp">
-
-        <ImageView
-            android:id="@+id/imgRuta"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/rvbus" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#66000000" />
-
-        <ImageView
-            android:id="@+id/btnBack"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_margin="16dp"
-            android:layout_gravity="top|start"
-            android:src="@drawable/ic_arrow_back" />
-
-        <TextView
-            android:id="@+id/txtNombreRuta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            tools:text="PUENTE NUEVO - CAMPUS"
-            android:textColor="@android:color/white"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-    </FrameLayout>
-
-    <!-- Contenido scrollable -->
+    <!-- Contenido scrolleable -->
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="220dp"
         android:clipToPadding="false"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:paddingBottom="90dp">
 
-        <!-- Aquí esta LinearLayout con el contenido -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="vertical">
 
-
-
-            <!-- Card: ubicación actual -->
-            <androidx.cardview.widget.CardView
+            <!-- Imagen superior -->
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
+                android:layout_height="230dp">
 
-                <LinearLayout
+                <ImageView
+                    android:id="@+id/imgRuta"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:paddingHorizontal="16dp">
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/rvbus" />
 
-                    <TextView
-                        android:id="@+id/txtUbicacionActual"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Ubicación actual"
-                        android:textColor="#888"
-                        android:textSize="16sp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#66000000" />
 
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_arrow_derecha"/>
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="16dp"
+                    android:layout_gravity="top|start"
+                    android:src="@drawable/ic_arrow_back" />
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Sección: disponibilidad -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Disponibilidad"
-                android:textStyle="bold"
-                android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/txtNombreRuta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:text="PUENTE NUEVO - CAMPUS" />
+            </FrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:weightSum="2">
+                android:orientation="vertical"
+                android:padding="16dp">
 
-                <!-- Asientos -->
+                <!-- Card ubicación actual -->
                 <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="16dp"
                     app:cardCornerRadius="12dp"
-                    app:cardElevation="2dp">
+                    app:cardElevation="4dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center">
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp">
+
+                        <TextView
+                            android:id="@+id/txtUbicacionActual"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ubicación actual"
+                            android:textColor="#888"
+                            android:textSize="16sp" />
 
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_seat_passenger" />
-
-                        <TextView
-                            android:id="@+id/txtAsientos"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="15 / 30"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:layout_marginTop="8dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="asientos disponibles"
-                            android:textSize="12sp"
-                            android:textColor="#888" />
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_arrow_derecha"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- De pie -->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
+                <!-- Disponibilidad -->
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="8dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="2dp">
+                    android:layout_marginTop="24dp"
+                    android:text="Disponibilidad"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/icon_elevator_passenger" />
-
-                        <TextView
-                            android:id="@+id/txtDePie"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="0 / 10"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:layout_marginTop="8dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="personas de pie"
-                            android:textSize="12sp"
-                            android:textColor="#888" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
-
-            <!-- Sección Detalles -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Detalles de la ruta"
-                android:textStyle="bold"
-                android:textSize="16sp" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp">
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:weightSum="2">
 
-                    <!-- Hora de salida -->
-                    <TextView
-                        android:id="@+id/labelHoraSalida"
+                    <!-- Asientos -->
+                    <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Hora de salida"
-                        android:textSize="12sp"
-                        android:textColor="#888"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/labelHoraLlegada"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:layout_marginEnd="8dp" />
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp">
 
-                    <TextView
-                        android:id="@+id/txtHoraSalida"
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_seat_passenger" />
+
+                            <TextView
+                                android:id="@+id/txtAsientos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15 / 30"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:layout_marginTop="8dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="asientos disponibles"
+                                android:textSize="12sp"
+                                android:textColor="#888" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Personas de pie -->
+                    <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        tools:text="6:00 AM"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        app:layout_constraintTop_toBottomOf="@id/labelHoraSalida"
-                        app:layout_constraintStart_toStartOf="@id/labelHoraSalida"
-                        app:layout_constraintEnd_toEndOf="@id/labelHoraSalida" />
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp">
 
-                    <!-- Hora de llegada -->
-                    <TextView
-                        android:id="@+id/labelHoraLlegada"
-                        android:layout_width="0dp"
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/icon_elevator_passenger" />
+
+                            <TextView
+                                android:id="@+id/txtDePie"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0 / 10"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:layout_marginTop="8dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="personas de pie"
+                                android:textSize="12sp"
+                                android:textColor="#888" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <!-- Detalles -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Detalles de la ruta"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Hora de llegada"
-                        android:textSize="12sp"
-                        android:textColor="#888"
-                        app:layout_constraintStart_toEndOf="@id/labelHoraSalida"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:layout_marginStart="8dp" />
+                        android:padding="16dp">
 
-                    <TextView
-                        android:id="@+id/txtHoraLlegada"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        tools:text="6:50 AM"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        app:layout_constraintTop_toBottomOf="@id/labelHoraLlegada"
-                        app:layout_constraintStart_toStartOf="@id/labelHoraLlegada"
-                        app:layout_constraintEnd_toEndOf="@id/labelHoraLlegada" />
+                        <!-- Hora salida -->
+                        <TextView
+                            android:id="@+id/labelHoraSalida"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Hora de salida"
+                            android:textSize="12sp"
+                            android:textColor="#888"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/labelHoraLlegada"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginEnd="8dp" />
 
-                    <!-- Unidad -->
-                    <TextView
-                        android:id="@+id/labelUnidad"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="Unidad"
-                        android:textSize="12sp"
-                        android:textColor="#888"
-                        app:layout_constraintTop_toBottomOf="@+id/txtHoraSalida"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/labelConductor"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="8dp" />
+                        <TextView
+                            android:id="@+id/txtHoraSalida"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:text="6:00 AM"
+                            app:layout_constraintTop_toBottomOf="@id/labelHoraSalida"
+                            app:layout_constraintStart_toStartOf="@id/labelHoraSalida"
+                            app:layout_constraintEnd_toEndOf="@id/labelHoraSalida" />
 
-                    <TextView
-                        android:id="@+id/txtUnidad"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        tools:text="B-452"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        app:layout_constraintTop_toBottomOf="@id/labelUnidad"
-                        app:layout_constraintStart_toStartOf="@id/labelUnidad"
-                        app:layout_constraintEnd_toEndOf="@id/labelUnidad" />
+                        <!-- Hora llegada -->
+                        <TextView
+                            android:id="@+id/labelHoraLlegada"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Hora de llegada"
+                            android:textSize="12sp"
+                            android:textColor="#888"
+                            app:layout_constraintStart_toEndOf="@id/labelHoraSalida"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginStart="8dp" />
 
-                    <!-- Conductor -->
-                    <TextView
-                        android:id="@+id/labelConductor"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="Conductor"
-                        android:textSize="12sp"
-                        android:textColor="#888"
-                        app:layout_constraintTop_toBottomOf="@+id/txtHoraLlegada"
-                        app:layout_constraintStart_toEndOf="@id/labelUnidad"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginStart="8dp" />
+                        <TextView
+                            android:id="@+id/txtHoraLlegada"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            tools:text="6:50 AM"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toBottomOf="@id/labelHoraLlegada"
+                            app:layout_constraintStart_toStartOf="@id/labelHoraLlegada"
+                            app:layout_constraintEnd_toEndOf="@id/labelHoraLlegada" />
 
-                    <TextView
-                        android:id="@+id/txtConductor"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        tools:text="Carlitos Perez"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        app:layout_constraintTop_toBottomOf="@id/labelConductor"
-                        app:layout_constraintStart_toStartOf="@id/labelConductor"
-                        app:layout_constraintEnd_toEndOf="@id/labelConductor" />
+                        <!-- Unidad -->
+                        <TextView
+                            android:id="@+id/labelUnidad"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Unidad"
+                            android:textSize="12sp"
+                            android:textColor="#888"
+                            app:layout_constraintTop_toBottomOf="@+id/txtHoraSalida"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/labelConductor"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="8dp" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/txtUnidad"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            tools:text="B-452"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toBottomOf="@id/labelUnidad"
+                            app:layout_constraintStart_toStartOf="@id/labelUnidad"
+                            app:layout_constraintEnd_toEndOf="@id/labelUnidad" />
 
+                        <!-- Conductor -->
+                        <TextView
+                            android:id="@+id/labelConductor"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Conductor"
+                            android:textSize="12sp"
+                            android:textColor="#888"
+                            app:layout_constraintTop_toBottomOf="@+id/txtHoraLlegada"
+                            app:layout_constraintStart_toEndOf="@id/labelUnidad"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginStart="8dp" />
+
+                        <TextView
+                            android:id="@+id/txtConductor"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            tools:text="Carlitos Perez"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toBottomOf="@id/labelConductor"
+                            app:layout_constraintStart_toStartOf="@id/labelConductor"
+                            app:layout_constraintEnd_toEndOf="@id/labelConductor" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <!-- Botón Fijo Inferior -->
+    <!-- Botón fijo abajo -->
     <Button
         android:id="@+id/btnGenerarQR"
         android:layout_width="match_parent"
@@ -328,4 +329,4 @@
         android:drawablePadding="8dp"
         android:paddingVertical="12dp"
         android:textStyle="bold" />
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</FrameLayout>
