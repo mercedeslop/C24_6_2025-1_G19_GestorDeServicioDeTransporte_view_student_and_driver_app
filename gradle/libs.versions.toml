@@ -1,6 +1,7 @@
 [versions]
 agp = "8.9.2"
 converterGson = "2.9.0"
+core = "3.5.2"
 credentials = "1.5.0"
 fragmentKtx = "1.8.6"
 googleid = "1.1.1"
@@ -21,6 +22,7 @@ recyclerview = "1.4.0"
 retrofit = "2.9.0"
 services = "4.4.2"
 crashlytics = "3.0.3"
+zxingAndroidEmbedded = "4.3.0"
 
 
 [libraries]
@@ -31,6 +33,7 @@ androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
+core = { module = "com.google.zxing:core", version.ref = "core" }
 firebase-auth = { module = "com.google.firebase:firebase-auth-ktx" }
 googleid = { module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "googleid" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -45,6 +48,7 @@ firebase-bom = { module = "com.google.firebase:firebase-bom" , version.ref = "fi
 firebase-crashlytics = {module = "com.google.firebase:firebase-crashlytics"}
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+zxing-android-embedded = { module = "com.journeyapps:zxing-android-embedded", version.ref = "zxingAndroidEmbedded" }
 
 
 [plugins]

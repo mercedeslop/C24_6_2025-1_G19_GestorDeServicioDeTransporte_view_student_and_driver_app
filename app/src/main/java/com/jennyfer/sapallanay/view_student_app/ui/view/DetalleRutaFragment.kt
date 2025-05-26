@@ -50,6 +50,11 @@ class DetalleRutaFragment : Fragment() {
         binding.txtHoraSalida.text = ruta.horaSalida
         binding.txtHoraLlegada.text = ruta.horaLlegada
         binding.txtConductor.text = ruta.conductor
+
+        binding.btnGenerarQR.setOnClickListener {
+            val bottomSheet = ParaderosBottomSheet(ruta)
+            bottomSheet.show(parentFragmentManager, "ParaderosBottomSheet")
+        }
     }
 
     override fun onDestroyView() {
@@ -59,5 +64,7 @@ class DetalleRutaFragment : Fragment() {
         val bottomNav = requireActivity().findViewById<View>(R.id.bottom_navigation)
         bottomNav.visibility = View.VISIBLE
     }
+
+
 
 }

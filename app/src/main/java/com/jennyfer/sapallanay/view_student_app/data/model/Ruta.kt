@@ -9,5 +9,6 @@ data class Ruta(
     val horaSalida: String,
     val horaLlegada: String,
     val unidad: String,
-    val conductor: String
+    val conductor: String,
+    val paraderos: List<String>
 ) : Serializable

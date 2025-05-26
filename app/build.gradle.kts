@@ -67,4 +67,9 @@ dependencies {
     implementation (libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.fragment.ktx)
 
+    // Codigo qr
+    implementation (libs.core)
+    implementation (libs.zxing.android.embedded)
+
+
 }
