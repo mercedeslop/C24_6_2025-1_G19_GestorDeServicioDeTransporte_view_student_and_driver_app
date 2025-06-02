@@ -1,17 +1,17 @@
-package com.jennyfer.sapallanay.view_student_app
+package com.jennyfer.sapallanay.view_student_app.ui.view.passenger
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
+import com.jennyfer.sapallanay.view_student_app.R
 import com.jennyfer.sapallanay.view_student_app.databinding.ActivityMainBinding
-import com.jennyfer.sapallanay.view_student_app.ui.view.InicioFragment
-import com.jennyfer.sapallanay.view_student_app.ui.view.RutasFragment
 
 class MainActivity : AppCompatActivity() {
-    private var binding:ActivityMainBinding? = null
+    private var binding: ActivityMainBinding? = null
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +45,15 @@ class MainActivity : AppCompatActivity() {
             }
 
         }*/
+
+        supportFragmentManager.addOnBackStackChangedListener {
+            val fragment = supportFragmentManager.findFragmentById(R.id.frame_container)
+            val hideBottomNav = fragment is QRFragment || fragment is DetalleRutaFragment
+
+            findViewById<View>(R.id.bottom_navigation).visibility =
+                if (hideBottomNav) View.GONE else View.VISIBLE
+        }
+
 
     }
 

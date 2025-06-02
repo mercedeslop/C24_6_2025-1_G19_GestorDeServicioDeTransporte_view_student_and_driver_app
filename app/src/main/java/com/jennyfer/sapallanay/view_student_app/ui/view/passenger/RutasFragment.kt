@@ -1,4 +1,4 @@
-package com.jennyfer.sapallanay.view_student_app.ui.view
+package com.jennyfer.sapallanay.view_student_app.ui.view.passenger
 
 import android.content.Intent
 import android.os.Bundle

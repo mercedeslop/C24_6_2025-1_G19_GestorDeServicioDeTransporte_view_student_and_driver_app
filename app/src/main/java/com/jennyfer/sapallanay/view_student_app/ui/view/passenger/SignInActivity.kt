@@ -1,4 +1,4 @@
-package com.jennyfer.sapallanay.view_student_app.ui.view
+package com.jennyfer.sapallanay.view_student_app.ui.view.passenger
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,9 +10,10 @@ import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import com.jennyfer.sapallanay.view_student_app.BaseActivity
-import com.jennyfer.sapallanay.view_student_app.GoogleAuthClient
-import com.jennyfer.sapallanay.view_student_app.MainActivity
+import com.jennyfer.sapallanay.view_student_app.ui.view.passenger.GoogleAuthClient
+import com.jennyfer.sapallanay.view_student_app.ui.view.passenger.MainActivity
 import com.jennyfer.sapallanay.view_student_app.databinding.ActivitySignInBinding
+import com.jennyfer.sapallanay.view_student_app.ui.view.driver.SignInDriverActivity
 import kotlinx.coroutines.launch
 
 class SignInActivity : BaseActivity() {
@@ -43,6 +44,13 @@ class SignInActivity : BaseActivity() {
         binding?.btnSignInWithGoogle?.setOnClickListener {
             signInWithGoogle()
         }
+
+        binding?.btnPortalDriver?.setOnClickListener {
+            val intent = Intent(this, SignInDriverActivity::class.java)
+            startActivity(intent)
+        }
+
+
 
         if (auth.currentUser!= null){
             startActivity(Intent(this, MainActivity::class.java))

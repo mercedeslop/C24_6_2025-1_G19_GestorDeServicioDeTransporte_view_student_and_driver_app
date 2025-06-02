@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn ="navigation_view">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_routes"
+            android:icon="@drawable/tablerbus"
+            android:title="Rutas asignadas"
+            android:enabled="true"
+            android:titleTextColor="@color/gray" />
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/icnotification"
+            android:title="Notificaciones"
+            android:enabled="true"
+            android:titleTextColor="@color/gray" />
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/icquestion"
+            android:title="Ayuda"
+            android:enabled="true"
+            android:titleTextColor="@color/gray" />
+    </group>
+
+    <item
+        android:title="">
+        <menu>
+            <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/icsignout"
+            android:title="Cerrar sesión"
+            android:orderInCategory="100" />
+        </menu>
+    </item>
+</menu>

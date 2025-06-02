@@ -3,4 +3,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="default_web_client_id">456534102220-ojg3pb1u03rr1d8hdtin4050kcr8b3m0.apps.googleusercontent.com</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="navigation_drawer_open">Abrir menú</string>
+    <string name="navigation_drawer_close">Cerrar menú</string>
+    <string name="first_fragment_label">Primer Fragmento</string>
+    <string name="second_fragment_label">Primer Fragmento</string>
+
+
+
+
+
 </resources>

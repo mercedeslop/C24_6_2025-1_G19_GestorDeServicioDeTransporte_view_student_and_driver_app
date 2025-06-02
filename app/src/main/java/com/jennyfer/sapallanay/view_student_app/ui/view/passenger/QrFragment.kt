@@ -1,4 +1,4 @@
-package com.jennyfer.sapallanay.view_student_app.ui.view
+package com.jennyfer.sapallanay.view_student_app.ui.view.passenger
 
 import android.graphics.Bitmap
 import android.graphics.Color
@@ -7,15 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.qrcode.QRCodeWriter
-import com.jennyfer.sapallanay.view_student_app.R
 import com.jennyfer.sapallanay.view_student_app.databinding.FragmentQrBinding
 import org.json.JSONObject
 import java.text.SimpleDateFormat
-import java.time.Instant
 import java.util.Date
 import java.util.Locale
 
@@ -44,11 +41,16 @@ class QRFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         //super.onViewCreated(view, savedInstanceState)
+        // Ocultar BottomNavigationView
+        //requireActivity().findViewById<BottomNavigationView>(R.id.bottom_navigation).visibility = View.GONE
+        //requireActivity().findViewById<View>(R.id.bottom_navigation)?.visibility = View.GONE
         val userId = FirebaseAuth.getInstance().currentUser?.uid.orEmpty()
         val ruta = arguments?.getString("ruta").orEmpty()
         val paradero = arguments?.getString("paradero").orEmpty()
         val timestamp = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
             .format(Date())
+
+
 
 
         // Codificar en JSON
@@ -59,12 +61,9 @@ class QRFragment : Fragment() {
             put("timestamp", timestamp)
         }.toString()
 
-        // Ocultar BottomNavigationView
-        //requireActivity().findViewById<BottomNavigationView>(R.id.bottom_navigation).visibility = View.GONE
 
         // Generar el código QR
-        val qrBitmap = generateQR(qrData)
-        binding.qrImageView.setImageBitmap(qrBitmap)
+        binding.qrImageView.setImageBitmap(generateQR(qrData))
 
         // Botón Volver
         binding.btnVolver.setOnClickListener {

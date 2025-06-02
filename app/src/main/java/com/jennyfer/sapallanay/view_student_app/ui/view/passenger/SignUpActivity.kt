@@ -1,4 +1,4 @@
-package com.jennyfer.sapallanay.view_student_app.ui.view
+package com.jennyfer.sapallanay.view_student_app.ui.view.passenger
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,8 +8,9 @@ import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import com.jennyfer.sapallanay.view_student_app.BaseActivity
-import com.jennyfer.sapallanay.view_student_app.MainActivity
+import com.jennyfer.sapallanay.view_student_app.ui.view.passenger.MainActivity
 import com.jennyfer.sapallanay.view_student_app.databinding.ActivitySignUpBinding
+import com.jennyfer.sapallanay.view_student_app.ui.view.passenger.SignInActivity
 
 class SignUpActivity : BaseActivity() {
     private var binding: ActivitySignUpBinding? = null

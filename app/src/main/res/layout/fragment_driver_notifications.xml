@@ -3,14 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.view.passenger.RutasFragment">
+    tools:context=".ui.view.driver.DriverNotificationsFragment">
 
-
-    <Button
-        android:id="@+id/btnLogout"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Cerrar Sesión" />
+        android:text="Notificaciones"
+        android:layout_gravity="center" />
+
 
 </FrameLayout>

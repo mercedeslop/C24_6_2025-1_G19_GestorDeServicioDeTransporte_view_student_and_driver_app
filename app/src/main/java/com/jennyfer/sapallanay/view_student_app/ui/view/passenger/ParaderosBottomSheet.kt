@@ -1,4 +1,4 @@
-package com.jennyfer.sapallanay.view_student_app.ui.view
+package com.jennyfer.sapallanay.view_student_app.ui.view.passenger
 
 import android.app.Dialog
 import android.os.Bundle
@@ -51,7 +51,8 @@ class ParaderosBottomSheet(private val ruta: Ruta) : BottomSheetDialogFragment()
             adapter = ParaderosAdapter(ruta.paraderos) { paraderoSeleccionado ->
 
                 //Lógica al hacer clic en un paradero
-                val qrFragment = QRFragment.newInstance(ruta.tituloRuta, paraderoSeleccionado)
+                val qrFragment =
+                    QRFragment.Companion.newInstance(ruta.tituloRuta, paraderoSeleccionado)
                 dismiss()
 
                 parentFragmentManager.beginTransaction()

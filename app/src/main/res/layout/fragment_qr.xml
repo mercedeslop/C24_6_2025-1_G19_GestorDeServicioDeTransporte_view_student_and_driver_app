@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".ui.view.QrFragment">
+    tools:context=".ui.view.passenger.QrFragment">
 
     <!-- Guía para cortar el fondo azul -->
     <androidx.constraintlayout.widget.Guideline

@@ -15,16 +15,19 @@
         android:theme="@style/Theme.View_student_app"
         tools:targetApi="31">
         <activity
-            android:name=".SignIn_Driver"
+            android:name=".ui.view.driver.MainDriverActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.driver.SignInDriverActivity"
             android:exported="false" />
         <activity
             android:name=".BaseActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.view.SignUpActivity"
+            android:name=".ui.view.passenger.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.view.SignInActivity"
+            android:name=".ui.view.passenger.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,7 +36,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.view.passenger.MainActivity"
             android:exported="false" />
     </application>
 

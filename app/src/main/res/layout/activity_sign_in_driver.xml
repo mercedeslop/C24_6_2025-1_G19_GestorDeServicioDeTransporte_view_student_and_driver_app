@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignIn_Driver">
+    tools:context=".ui.view.driver.SignInDriverActivity">
 
     <ImageView
         android:id="@+id/ivSinInLogo"
@@ -103,7 +103,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnSignIn"
+        android:id="@+id/btnSignInDriver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/tilPassword"
@@ -126,7 +126,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/btnSignIn"
+        app:layout_constraintTop_toBottomOf="@id/btnSignInDriver"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -143,7 +143,7 @@
             android:id="@+id/tvRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" Registrate"
+            android:text=" Regístrate"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@color/blue_5"

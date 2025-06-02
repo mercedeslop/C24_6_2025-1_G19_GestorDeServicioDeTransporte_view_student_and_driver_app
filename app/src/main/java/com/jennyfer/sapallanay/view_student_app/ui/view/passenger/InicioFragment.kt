@@ -1,4 +1,4 @@
-package com.jennyfer.sapallanay.view_student_app.ui.view
+package com.jennyfer.sapallanay.view_student_app.ui.view.passenger
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,13 +9,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jennyfer.sapallanay.view_student_app.R
-import com.jennyfer.sapallanay.view_student_app.RutasProvider
 import com.jennyfer.sapallanay.view_student_app.adapter.RutasAdapter
 import com.jennyfer.sapallanay.view_student_app.databinding.FragmentInicioBinding
 import com.jennyfer.sapallanay.view_student_app.ui.viewmodel.RutaViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-
 
 class InicioFragment : Fragment() {
 
